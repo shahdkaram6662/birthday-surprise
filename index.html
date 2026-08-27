@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff1f7, #ffe4d6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+            color: #4a2635;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            padding: 35px 20px;
+        }
+
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .gift-button {
+            border: none;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #ffffff;
+            color: #c44570;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .gift-button:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        #videoSection {
+            display: none;
+            margin-top: 35px;
+            animation: fadeIn 1s ease;
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+        }
+
+        .message {
+            margin-top: 25px;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 22px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .emoji {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hearts">
+        <div class="heart" style="left:10%; animation-duration:7s;">❤️</div>
+        <div class="heart" style="left:25%; animation-duration:9s;">💗</div>
+        <div class="heart" style="left:40%; animation-duration:6s;">💕</div>
+        <div class="heart" style="left:60%; animation-duration:8s;">❤️</div>
+        <div class="heart" style="left:75%; animation-duration:10s;">💗</div>
+        <div class="heart" style="left:90%; animation-duration:7s;">💕</div>
+    </div>
+
+    <div class="container">
+
+        <div class="emoji">🎂</div>
+
+        <h1>Happy Birthday HAGAR ❤️</h1>
+
+        <p class="subtitle">
+            I have a little surprise for you...<br>
+            Something made especially for you. ✨
+        </p>
+
+        <button class="gift-button" onclick="openGift()">
+            🎁 Open Your Surprise
+        </button>
+
+        <div id="videoSection">
+
+            <video controls playsinline>
+                <source
+                    src="https://drive.google.com/uc?export=download&id=1NyAyt4WWvtfHeEHWWvlIa_-0g0RO7_W7"
+                    type="video/mp4">
+                
+                Your browser does not support the video tag.
+            </video>
+
+            <p class="message">
+                ❤️ Happy Birthday! ❤️<br>
+                I hope this little surprise makes you smile.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        function openGift() {
+            document.getElementById("videoSection").style.display = "block";
+
+            document.querySelector(".gift-button").style.display = "none";
+
+            document.getElementById("videoSection").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
+</html>
